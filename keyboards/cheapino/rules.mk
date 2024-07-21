@@ -1,8 +1,11 @@
-SRC += side.c
-SRC += rf.c
-SRC += sleep.c
-SRC += rf_driver.c
-UART_DRIVER_REQUIRED = yes
+CAPS_WORD_ENABLE = yes
+CUSTOM_MATRIX = lite
+WS2812_DRIVER = vendor
+RGBLIGHT_ENABLE = yes
+DEFERRED_EXEC_ENABLE = yes
+SRC += encoder.c
+SRC += ghosting.c
+SRC += matrix.c
 
 # DT_PRINT  “Dynamic Tapping Term Print”: Types the current tapping term, in milliseconds
 # DT_UP     “Dynamic Tapping Term Up”: Increases the current tapping term by 5ms
