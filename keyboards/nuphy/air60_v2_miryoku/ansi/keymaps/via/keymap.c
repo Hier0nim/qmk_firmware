@@ -22,10 +22,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOME_S LALT_T(KC_S)
 #define HOME_D LCTL_T(KC_D)
 #define HOME_F LSFT_T(KC_F)
-#define HOME_G RALT_T(KC_G)
+#define HOME_X RALT_T(KC_X)
 
 // Right-hand home row mods
-#define HOME_H RALT_T(KC_H)
+#define HOME_DOT RALT_T(KC_DOT)
 #define HOME_J RSFT_T(KC_J)
 #define HOME_K RCTL_T(KC_K)
 #define HOME_L LALT_T(KC_L)
@@ -38,6 +38,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NUM_N LT(6, KC_N)
 #define SYM_M LT(7, KC_M)
 #define FUN_COMM LT(8, KC_COMM)
+#define MOUSE_ESC LT(9, KC_ESC)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -46,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = LAYOUT(
 	KC_ESC, 	KC_1,   	KC_2,   	KC_3,  		KC_4,   	KC_5,   	KC_6,   	KC_7,   	KC_8,   	KC_9,  		KC_0,   	KC_MINS,	KC_EQL, 	KC_BSPC,
 	KC_TAB, 	KC_Q,   	KC_W,   	KC_E,  		KC_R,   	KC_T,   	KC_Y,   	KC_U,   	KC_I,   	KC_O,  		KC_P,   	KC_LBRC,	KC_RBRC, 	KC_BSLS,
-	KC_CAPS,	KC_A,   	KC_S,   	KC_D,  		KC_F,   	KC_G,   	KC_H,   	KC_J,   	KC_K,   	KC_L,  		KC_SCLN,	KC_QUOT, 	            KC_ENT,
+	MOUSE_ESC,	KC_A,   	KC_S,   	KC_D,  		KC_F,   	KC_G,   	KC_H,   	KC_J,   	KC_K,   	KC_L,  		KC_SCLN,	KC_QUOT, 	            KC_ENT,
 	KC_LSFT,	KC_Z,   	KC_X,   	KC_C,  		KC_V,   	KC_B,   	KC_N,   	KC_M,   	KC_COMM,	KC_DOT,		KC_SLSH,	KC_RSFT,	KC_UP,		KC_DEL,
 	KC_LCTL,	KC_LGUI,	KC_LALT,										KC_SPC, 							KC_RALT,	MO(2),   	KC_LEFT,	KC_DOWN,    KC_RGHT),
 
@@ -54,8 +55,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [1] = LAYOUT(
 	KC_ESC, 	KC_1,   	KC_2,   	KC_3,  		KC_4,   	KC_5,   	KC_6,   	KC_7,   	KC_8,   	KC_9,  		KC_0,   	KC_MINS,	KC_EQL, 	KC_BSPC,
 	KC_TAB, 	KC_Q,   	KC_W,   	KC_E,  		KC_R,   	KC_T,   	KC_Y,   	KC_U,   	KC_I,   	KC_O,  		KC_P,   	KC_LBRC,	KC_RBRC, 	KC_BSLS,
-	KC_CAPS,	HOME_A,     HOME_S,     HOME_D,     HOME_F,     HOME_G,     HOME_H,     HOME_J,     HOME_K,     HOME_L,     HOME_SCLN, 	KC_QUOT, 	            KC_ENT,
-	KC_LSFT,	KC_Z,   	KC_X,   	KC_C,  		KC_V,   	KC_B,   	NUM_N,   	SYM_M,   	FUN_COMM,	KC_DOT,		KC_SLSH,	KC_RSFT,	KC_UP,		KC_DEL,
+	KC_CAPS,	HOME_A,     HOME_S,     HOME_D,     HOME_F,     KC_G,       KC_H,       HOME_J,     HOME_K,     HOME_L,     HOME_SCLN, 	KC_QUOT, 	            KC_ENT,
+	KC_LSFT,	KC_Z,   	HOME_X,   	KC_C,  		KC_V,   	KC_B,   	NUM_N,   	SYM_M,   	FUN_COMM,	HOME_DOT,   KC_SLSH,	KC_RSFT,	KC_UP,		KC_DEL,
 	KC_LCTL,	KC_LGUI,	KC_LALT,										SPACE_FN, 							KC_RALT,	MO(2),   	KC_LEFT,	KC_DOWN,    KC_RGHT),
 
 // layer 2 win fn
@@ -86,40 +87,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [5] = LAYOUT(
     _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     _______,
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_HOME,    KC_END,     KC_APP,     _______,    _______,    _______,    _______,
-    _______,    KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,    KC_RALT,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    _______,    _______,                _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    KC_BSPC,    KC_DEL,     _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    KC_LGUI,    KC_LALT,    KC_LCTL,    KC_LSFT,    _______,    _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    _______,                _______,
+    _______,    _______,    KC_RALT,    _______,    _______,    _______,    KC_BSPC,    KC_DEL,     _______,    _______,    _______,    _______,    _______,    _______,
     _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),
 
 // layer 6 num_layer
 [6] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
     _______,    KC_LBRC,    KC_7,       KC_8,       KC_9,       KC_RBRC,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    KC_QUOT,    KC_4,       KC_5,       KC_6,       KC_EQL,     KC_RALT,    KC_RSFT,    KC_RCTL,    KC_LALT,    KC_RGUI,    _______,                _______,
-    _______,    KC_GRV,     KC_1,       KC_2,       KC_3,       KC_BSLS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    KC_QUOT,    KC_4,       KC_5,       KC_6,       KC_EQL,     _______,    KC_RSFT,    KC_RCTL,    KC_LALT,    KC_RGUI,    _______,                _______,
+    _______,    KC_GRV,     KC_1,       KC_2,       KC_3,       KC_BSLS,    _______,    _______,    _______,    KC_RALT,    _______,    _______,    _______,    _______,
     _______,    _______,    KC_0,                                           KC_MINS,                            _______,    _______,    _______,    _______,    _______),
 
 // layer 7 sym_layer
 [7] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
     _______,    KC_LCBR,    KC_AMPR,    KC_ASTR,    KC_LPRN,    KC_RCBR,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    KC_DQUO,    KC_DLR,     KC_PERC,    KC_CIRC,    KC_PLUS,    KC_RALT,    KC_RSFT,    KC_RCTL,    KC_LALT,    KC_RGUI,    _______,                _______,
-    _______,    KC_TILD,    KC_EXLM,    KC_AT,      KC_HASH,    KC_PIPE,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    KC_DQUO,    KC_DLR,     KC_PERC,    KC_CIRC,    KC_PLUS,    _______,    KC_RSFT,    KC_RCTL,    KC_LALT,    KC_RGUI,    _______,                _______,
+    _______,    KC_TILD,    KC_EXLM,    KC_AT,      KC_HASH,    KC_PIPE,    _______,    _______,    _______,    KC_RALT,    _______,    _______,    _______,    _______,
     _______,    _______,    KC_RPRN,                                        KC_UNDS,                            _______,    _______,    _______,    _______,    _______),
 
 // layer 8 fun_layer
 [8] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
     _______,    KC_F12,     KC_F7,      KC_F8,      KC_F9,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    KC_F11,     KC_F4,      KC_F5,      KC_F6,      _______,    KC_RALT,    KC_RSFT,    KC_RCTL,    KC_LALT,    KC_RGUI,    _______,                _______,
-    _______,    KC_F10,     KC_F1,      KC_F2,      KC_F3,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    KC_F11,     KC_F4,      KC_F5,      KC_F6,      _______,    _______,    KC_RSFT,    KC_RCTL,    KC_LALT,    KC_RGUI,    _______,                _______,
+    _______,    KC_F10,     KC_F1,      KC_F2,      KC_F3,      _______,    _______,    _______,    _______,    KC_RALT,    _______,    _______,    _______,    _______,
     _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______),
 
 // layer 9
 [9] = LAYOUT(
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    _______,    MS_BTN1,    MS_BTN2,    _______,    _______,    _______,    MS_LEFT,    MS_DOWN,    MS_UP,      MS_RGHT,    _______,                _______,
+    _______,    _______,    _______,    _______,    _______,    _______,    _______,    MS_WHLL,    MS_WHLD,    MS_WHLU,    MS_WHLR,    _______,    _______,    _______,
     _______,    _______,    _______,                                        _______,                            _______,    _______,    _______,    _______,    _______)
 };
 
